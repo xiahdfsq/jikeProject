@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>新闻管理</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/packpage.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/back.js"></script>
+</head>
+
+<body>   
+    <div class="container-fluid">
+        <div class="row">           
+            <div class="col-sm-9 col-sm-offset-3 col-md-10  main">
+                <div id="realcontent">
+                    <h2 class="sub-header">新闻列表</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>新闻标题</th>
+                                    <th>新闻作者</th>
+                                    <th>新闻发布时间</th>
+                                    <th>基本内容</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody>                              
+<?php
+$con=mysql_connect("localhost","root","");
+if(!$con){
+    die('Could not connet:'.mysql_error());
+}else{
+
+    mysql_select_db("newsdata",$con);   
+    mysql_query("set names'utf8'");          
+ $ql="select * from newslist" ;//设置查询指令 
+ $result=mysql_query($ql);//执行查询 
+ while($row=mysql_fetch_assoc($result))//将result结果集中查询结果取出一条 
+ { echo "<tr>
+ <td>".$row[ "newsid"]. "</td>
+ <td>".$row[ "newstitle"]. "</td>
+ <td>".$row[ "newsmaker"]. "</td>
+ <td>".$row[ "addtime"]. "</td>
+ <td>".$row[ "newscontent"]. "</td></tr>";}
+    
+}
+mysql_close($con);     
+
+?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="realcontentli"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

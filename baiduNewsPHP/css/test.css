@@ -1,0 +1,45 @@
+
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .ui-hotword {
+        width: 320px;
+    height: 28px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.ui-hotword-left {
+    width: 36px;
+    height: 28px;
+    background-color: #e02f2f;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+    float: left;
+}
+.ui-hotword-content{
+    float: left;
+    margin-left: 20px;
+    color: #545454;
+}
+.ui-hotword-content .swiper-container {
+height: 28px;
+width: 100%;
+
+}
+.ui-hotword-content .swiper-slide {
+text-align: left;
+font-size: 18px;
+background: #fff;
+}

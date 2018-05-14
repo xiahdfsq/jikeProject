@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>newadd</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/packpage.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/back.js"></script>
+</head>
+
+<body>
+    <div class="nadd-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3 col-md-10  main">
+                    <h2 class="sub-header">推举类新闻发布</h2>
+                    <div class="table-responsive">
+                    <form action="mysql.func.php" method="get" enctype="multipart/form-data"> 
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr><td>
+                                    <label for="newstitle"> 新闻标题</label>
+                                    <input type="text" id="newstitle" name="newstitle" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="newsmaker"> 新闻作者</label>
+                                    <input type="text" id="newsmaker" name="newsmaker" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="addtime"> 新闻时间</label>
+                                    <input type="date" id="addtime" name="addtime" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="newsimg"> 图片地址</label>
+                                    <input type="file" id="newsimg" name="newsimg" /></td>
+                                </tr>
+
+                                <tr><td>
+                                    <label for="newscontent"> 新闻内容</label>
+                                    <textarea id="newscontent" name="newscontent"></textarea>
+                                </tr></td>
+                                <tr><td>
+                                    <input type="submit" value="提交" />
+	    <input type="reset" value="重置" />
+                                </tr></td>
+                                
+                        </tbody>
+                        </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

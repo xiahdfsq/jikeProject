@@ -1,0 +1,511 @@
+/*
+ * layout.less,公用模板和全局变量
+ */
+
+@body_W: 100%;
+@w: 1000px;
+
+@b_color:#000;
+@w_color:#fff;
+@color: #333;
+@h_color: #35B558;
+@size: 12px;
+@z_index1: 10;
+@z_index3: 30;
+@z_index5: 50;
+@z_index7: 70;
+@z_index10:100;
+@font_w4:400;
+@font_w5:500;
+a:hover {
+    color: #35B558!important;
+    text-decoration: none!important;
+}
+
+//clearfix
+.clearfix {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    *zoom:1;
+}
+
+//匹配+定位positiong定位
+.pos(f) {
+    position: fixed;
+}
+
+.pos(r) {
+    position: relative;
+}
+
+.pos(a) {
+    position: absolute;
+}
+
+.txt_ali(@ta: left) {
+    text-align: @ta;
+}
+
+.ver-ali(@va: middle) {
+    vertical-align: @va;
+}
+
+//border
+.bor(@color: #fff) {
+    border: 1px solid @color;
+}
+.bor(top,@color){
+    border-top: 1px solid @color; 
+}
+.bor(bt,@color: #fff) {
+    border-bottom: 1px solid @color;
+}
+.bor(le,@color: #fff) {
+    border-left: 1px solid @color;
+}
+.bor(ri,@color: #fff) {
+    border-right: 1px solid @color;
+}
+
+.cur {
+    cursor: pointer;
+}
+
+//背景颜色
+.bg-c(@cr) {
+    background-color: @cr;
+}
+
+//矩形的定义
+.rec(@w, @h) {
+    width: @w ;
+    height: @h ;
+}
+
+//div水平居中
+.margin(mid, @top: 0) {
+    margin: @top auto;
+}
+
+//display	
+.dis(b) {
+    display: block;
+}
+
+.dis(i) {
+    display: inline;
+}
+
+.dis(ib) {
+    display: inline-block;
+}
+
+.dis(none) {
+    display: none;
+}
+
+//float浮动
+.fl {
+    float: left;
+    display: inline;
+}
+
+.fr {
+    float: right;
+    display: inline;
+}
+
+//透明度
+.opacity(@opacity) {
+    @opa: (@opacity*100);
+    filter: alpha(opacity=@opa);
+    opacity: @opacity;
+}
+
+//box-sizing
+.box_sizing(@sizing) {
+    -webkit-box-sizing: @sizing;
+    -moz-box-sizing: @sizing;
+    box-sizing: @sizing;
+}
+
+//border圆角
+.border-radius(@radius: 4px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+//3角匹配模式
+.triangle(top,@w:5px,@c:#ccc){
+  border-width: @w;
+  border-color: transparent transparent @c transparent ;
+  border-style: dashed dashed solid dashed;
+}
+.triangle(bottom,@w:5px,@c:#ccc){
+  border-width: @w;
+  border-color: @c transparent transparent  transparent ;
+  border-style: solid dashed dashed  dashed;
+}
+.triangle(right,@w:5px,@c:#ccc){
+  border-width: @w;
+  border-color:  transparent transparent  transparent @c;
+  border-style:  dashed dashed  dashed solid;
+}
+.triangle(right,@w:5px,@c:#ccc){
+  border-width: @w;
+  border-color:  transparent  @c transparent  transparent;
+  border-style:  dashed dashed solid dashed ;
+}
+.triangle(@_,@w:5px,@c:#ccc){
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+
+/* box阴影*/
+
+.box-shadow(@x: 0px, @y: 0px, @blur: 0px, @color: #fff) {
+    -webkit-box-shadow: @x @y @blur @color;
+    -moz-box-shadow: @x @y @blur @color;
+    box-shadow: @x @y @blur @color;
+}
+
+// 元素过渡效果
+.transition(@time: 1s, @prop: all, @ease: ease-in-out) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+
+/* 转换/旋转 */
+
+.transform (@rotate: 90deg) {
+    -webkit-transform: rotateY(@rotate);
+    -moz-transform: rotateY(@rotate);
+    transform: rotateY(@rotate);
+}
+
+.animation(@n, @t) {
+    -webkit-animation: @n @t ease-out forwards;
+    -moz-animation: @n @t ease-out forwards;
+    animation: @n @t ease-out forwards;
+}
+
+//公用swiper
+.swiper-container {
+    @swbar_h: 40px;
+    @swbar_w: 25px;
+    .arrow-left,
+    .arrow-right {
+        background-color: #efe;
+        .pos(a);
+        .rec(@swbar_w, @swbar_h);
+        line-height: @swbar_h;
+        top: 50%;
+        z-index: @z_index1+10;
+        margin-top: -20px;
+        font-size: 30px;
+        background-color: #8B8B8B;
+        color: #333;
+    }
+    .arrow-left {
+        left: 10px;
+    }
+    .arrow-right {
+        right: 10px;
+    }
+    .arrow-sild:hover{
+        background-color: #666;
+        color: #333!important;
+    }
+}
+
+//公用class
+.kj_t {
+    height: 36px;
+    width: @w;
+    line-height: 36px;
+    .ver-ali(middle);
+}
+
+.kj_t a {
+	
+    color: #514DEF;
+    .dis(ib);
+    .fr;
+    font-size: 10px;
+}
+.kj_t span{
+	.ver-ali(middle);
+}
+
+.kj_y {
+    margin-top: 20px;
+}
+
+//swiper
+.demo1 {
+    .swiper-container {
+        .pos(r);
+        .rec(561px, 115px);
+        margin: 3px 0 0 6px;
+        .arrow-sild {
+            .dis(none);
+        }
+        &:hover a {
+            .dis(b);
+        }
+    }
+    .swiper-slide{
+        .rec(186.5px, 115px);
+        a{
+            width: 100%;
+            height: 115px;
+            display: block;
+            border-right: 1px solid #F5F5F5;
+        }    
+        img {
+            .rec(40px, 40px);
+            margin: 8px 74px;
+            .dis(b);
+        }
+        p{
+            font-size: @size;
+            .txt_ali(center);
+            color:@color;
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.demo2 {
+    @fr_h: 200px;
+    @demo_w: 788px;
+    .fl;
+    .rec(@demo_w, @fr_h);
+    .tabs {
+        width: @demo_w;
+        a {
+            .dis(b);
+            .fl;
+            width: 155px;
+            color: #000;
+            .txt_ali(center);
+            .bor(#ccc);
+            line-height: 36px;
+        }
+        a.active {
+            color: #4CBD06;
+            border-top: 2px solid #4CBD06;
+        }
+    }
+    .swiper-container {
+        .bor(#ccc);
+        .rec(786px, 162px);
+        border-top: 0;
+        .swiper-slide {
+            .rec(786px, 162px);
+            background: none;
+            color: #000;
+        }
+    }
+    .fr_st {
+        .dis(ib);
+    }
+    .fr_ft {
+        font-size: @size;
+        color: #6D6D6D;
+    }
+    .freeintro {
+        span {
+            height: 26px;
+            line-height: 26px;
+            .dis(b);
+        }
+    }
+    .fr_learn {
+        .fr;
+        margin-right: 20px;
+        span {
+            .dis(b);
+            line-height: 26px;
+            margin-top: 20px;
+            button {
+                .dis(b);
+                height: 26px;
+                width: 70px;
+                background-color: @h_color;
+                color: #fff;
+                border: 0;
+            }
+        }
+    }
+}
+
+.demo3 {
+    .tabs {
+        margin-top: 20px;
+        .rec(@w, 40px);
+        line-height: 40px;
+        a {
+            padding: 10px 0;
+            .dis(b);
+            .fl;
+            width: 164px;
+            color: #000;
+            .txt_ali(center);
+            .bor(#F0F0F0);
+        }
+        .active {
+            color: #4CBD06;
+            border-bottom: 2px solid @h_color;
+        }
+    }
+    .swiper-container {
+        .rec(@w+20, 480px);
+        .swiper-slide {
+            background: none;
+            color: 000;
+        }
+    }
+    .swiper-slide{
+      width: 1020px;
+    }
+}
+
+.demo4 .swiper-wrapper,
+.demo5 .swiper-wrapper,
+.demo6 .swiper-wrapper {
+    padding: 20px 0;
+    .txt_ali(center);
+}
+
+.demo4 .swiper-container,
+.demo6 .swiper-container {
+    .rec(@w, 86px);
+    .bor(#ccc);
+    .txt_ali(center);
+}
+
+.arrow-sild {
+    .dis(none);
+}
+
+.demo4:hover .arrow-sild,
+.demo5:hover .arrow-sild,
+.demo6:hover .arrow-sild {
+    .dis(b);
+}
+
+.demo5 .swiper-container {
+    .rec(@w, 150px);
+    .bor(#ccc);
+    .txt_ali(center);
+}
+
+// .inner-shadow(@param1,@param2,@param3,@opacity){
+// 	-webkit-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+// 	   -moz-box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+// 			box-shadow:inset @param1 @param2 @param3 rgba(0, 0, 0, @opacity);
+// }
+// .bg-gradient(@startColor,@endColor){
+// 	background:@startColor/2 + @endColor/2;
+// 	filter:~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+// 	background:-webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+// 	background:-moz-linear-gradient(top, @startColor, @endColor);
+// }
+// //用于显示内容折行
+// .wrap{
+//     text-wrap: wrap;
+//     white-space: pre-wrap;
+//     white-space: -moz-pre-wrap;
+//     word-wrap: break-word;
+// }
+// /* 四角的半径定制 */
+// .border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+// 	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+// 	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+// 	border-radius: @topleft @topright @bottomright @bottomleft;
+// }
+
+/* 用法 */
+
+// #somediv {
+// 	.border-radius-custom(20px, 20px, 0px, 0px);
+// }
+
+/* 用法 */
+
+// #somediv {
+// 	.box-shadow(5px, 5px, 6px, 0.3);
+// }
+
+/* 用法 */
+
+// #someDiv {
+// 	.transform(5deg, 0.5, 1deg, 0px);
+// }
+// /* 线性渐变 */
+// .gradient (@origin: top, @start: #ffffff, @stop: #000000) {
+// 	background-color: @start;
+// 	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+// 	background-image: -moz-linear-gradient(@origin, @start, @stop);
+// 	background-image: -o-linear-gradient(@origin, @start, @stop);
+// 	background-image: -ms-linear-gradient(@origin, @start, @stop);
+// 	background-image: linear-gradient(@origin, @start, @stop);
+// }
+
+/* 用法 */
+
+// #someDiv {
+// 	.gradient(left, #663333, #333333);
+// }
+// /* 快速渐变 */
+// .quick-gradient (@origin: left, @alpha: 0.2) {
+// 	background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+// 	background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+// 	background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+// 	background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+// 	background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+// }
+
+/* 用法 */
+
+// #somediv {
+// 	background-color: BADA55;
+// 	.quick-gradient(top, 0.2);
+// }
+// /* 镜像效果 */
+// .reflect (@length: 30%, @opacity: 0.2){
+// 	-webkit-box-reflect: below -40px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(@length, transparent), to(rgba(255,255,255,@opacity)));
+// 	// -webkit-box-reflect: below -60px -webkit-gradient(linear, left top, left bottom, color-stop(@length,rgba(255, 255, 255, .1)), color-stop(100%,rgba(255, 255, 255, @opacity)));
+// }
+
+/* 用法 */
+
+// #somediv {
+// 	.reflect(20%, 0.2);
+// }
+// .ib{
+// 	display: inline-block;
+// 	*zoom:1;
+// 	vertical-align:top;
+// // 	font-size:0;/* 所有浏览器 */
+// // 	*word-spacing:-1px;/* IE6、7 */
+// // 	letter-spacing:-5px; Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节
+// // 	letter-spacing: -4px;/*根据不同字体字号或许需要做一定的调整*/
+// // word-spacing: -4px;
+// }
+// .trangle(@width: 8px, @pram1: transparent, @pram2: transparent, @pram3: transparent, @pram4: transparent){
+// 	width: 0;
+// 	height: 0;
+// 	border-style: solid;
+// 	border-width: @width;
+// 	border-color: @pram1 @pram2 @pram3 @pram4;
+// }
+// @color: #39c;

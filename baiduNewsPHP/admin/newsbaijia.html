@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>newadd</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/packpage.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/back.js"></script>
+</head>
+
+<body>
+    <div class="nadd-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3 col-md-10  main">
+                    <h2 class="sub-header">百家类目新闻发布</h2>
+                    <div class="table-responsive">
+                    <form action="mysql.func.php" method="get" enctype="multipart/form-data"> 
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr><td>
+                                    <label for="baijiatitle"> 百家新闻标题</label>
+                                    <input type="text" id="baijiatitle" name="baijiatitle" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="baijiamaker"> 百家新闻作者</label>
+                                    <input type="text" id="baijiamaker" name="baijiamaker" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="baijiatime"> 百家新闻时间</label>
+                                    <input type="date" id="baijiatime" name="baijiatime" /></td>
+                                </tr>
+                                <tr><td>
+                                    <label for="baijiaimg"> 百家图片地址</label>
+                                    <input type="file" id="baijiaimg" name="baijiaimg" /></td>
+                                </tr>
+
+                                <tr><td>
+                                    <label for="baijiacontent"> 百家新闻内容</label>
+                                    <textarea id="baijiacontent" name="baijiacontent"></textarea>
+                                </tr></td>
+                                <tr><td>
+                                    <input type="submit" value="提交" />
+	    <input type="reset" value="重置" />
+                                </tr></td>
+                                
+                        </tbody>
+                        </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

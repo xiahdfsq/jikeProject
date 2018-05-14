@@ -1,0 +1,99 @@
+npm install gulp -g
+npm init (package.json的名字不要写gulp)
+npm install gulp --save-dev
+npm install --save-dev gulp-postcss
+npm install --save-dev autoprefixer
+npm install --save-dev css-mqpacker
+npm install --save-dev csswring
+npm install --save-dev gulp-less
+npm install --save-dev path
+
+npm install --save-dev gulp-htmlmin
+npm install --save-dev gulp-imagemin
+npm install --save-dev imagemin-pngcrush
+npm install --save-dev gulp-minify-css
+npm install --save-dev gulp-jshint
+npm install --save-dev gulp-uglify
+npm install --save-dev gulp-concat  
+npm install --save-dev gulp-rename
+npm install --save-dev gulp-notify
+npm install jshint@2.9.1 -g
+
+
+
+
+
+
+
+
+npm install gulp-jshint --save-dev
+npm install gulp --save-dev
+
+// include gulp
+var gulp = require('gulp'); 
+
+// include plug-ins
+var jshint = require('gulp-jshint');
+
+// JS hint task
+gulp.task('jshint', function() {
+    gulp.src('./src/scripts/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter('default'));
+});
+npm install gulp-concat --save-dev 
+npm install gulp-strip-debug --save-dev 
+npm install gulp-uglify --save-dev
+var gulp = require('gulp'); 
+var concat = require('gulp-concat');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
+
+gulp.task('scripts', function() {
+  gulp.src(['./src/scripts/*.js'])
+    .pipe(concat('all.js'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/scripts/'));
+});
+
+npm install gulp-autoprefixer --save-dev 
+npm install gulp-minify-css --save-dev 
+
+var gulp = require('gulp'); 
+var concat = require('gulp-concat');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
+var autoprefix = require('gulp-autoprefixer');
+var minifyCSS = require('gulp-minify-css');
+
+gulp.task('scripts', function() {
+  gulp.src(['./src/scripts/*.js'])
+    .pipe(concat('all.js'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/scripts/'));
+});
+
+
+// CSS concat, auto-prefix and minify
+gulp.task('styles', function() {
+  gulp.src(['./src/styles/*.css'])
+    .pipe(concat('styles.css'))
+    .pipe(autoprefix('last 2 versions'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./build/styles/'));
+});
+
+// default gulp task
+gulp.task('default', [ 'scripts', 'styles'], function() {   
+
+// watch for JS changes
+gulp.watch('./src/scripts/*.js', function() {
+    gulp.run('jshint', 'scripts');
+  });
+// watch for CSS changes
+    gulp.watch('./src/styles/*.css', function() {
+        gulp.run('styles');
+  });
+});

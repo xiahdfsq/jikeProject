@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>百度新闻</title>
+    <link rel="short icon" href="images/webapp-news-logo.png">
+    <link rel="stylesheet" href="css/cube.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="ui-new-toolbar">
+                <div class="ui-new-toolbar-l head-pb1">
+                    <div data-href="http://m.baidu.com/?from=1000376a" class="head-pb2 btn-baidu"></div>
+                    <div class="head-pb2 btn-userhome"></div>
+                </div>
+                <div class="ui-new-toolbar-r head-pb1">
+                    <div class="head-pb2 btn-search"></div>
+                    <div class="head-pb2 btn-subscribe"></div>
+                </div>
+            </div>
+        </header>
+        <div class="clear"></div>
+        <div class="index_view_content">
+            <div id="index_view_navigator">
+                <div class="divider"></div>
+                <div class="content">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span class="cur">推举</span>
+                                    </div>
+                                </td>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span>百家</span>
+                                    </div>
+                                </td>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span>本地</span>
+                                    </div>
+                                </td>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span>图片</span>
+                                    </div>
+                                </td>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span>娱乐</span>
+                                    </div>
+                                </td>
+                                <td colspan="1">
+                                    <div>
+                                        <b></b>
+                                        <span>社会</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div id="index_view_sections">
+                <div class="tuiju">
+                    <div class="topic-gallery-container">
+                        <div class="swiper-container swiper-container-horizontal">
+                            <div class="swiper-wrapper" style="transition: 0ms; -webkit-transition: 0ms; -webkit-transform: translate3d(-8640px, 0px, 0px);">
+                                <div class="swiper-slide"><img src="images/gallery/b.jpg"><span>图片1</span></div>
+                                <div class="swiper-slide swiper-slide-prev"><img src="images/gallery/c.jpg"><span>图片2</span></div>
+                                <div class="swiper-slide swiper-slide-active"><img src="images/gallery/b.jpg"><span>图片3</span></div>
+                                <div class="swiper-slide swiper-slide-next"><img src="images/gallery/a.png"><span>图片4</span></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                                <span class="swiper-pagination-bullet"></span>
+                                <span class="swiper-pagination-bullet"></span>
+                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                                <span class="swiper-pagination-bullet"></span></div>
+                        </div>
+                    </div>
+                    <div class="ui-hotword">
+                        <div class="ui-hotword-left">
+                            <span>热点</span>
+                        </div>
+                        <div class="ui-hotword-content">
+                            <div class="swiper-container swiper-container-vertical">
+                                <div class="swiper-wrapper" style="-webkit-transform: translate3d(0px, -3870px, 0px); transition: 0ms; -webkit-transition: 0ms;">
+                                    <div class="swiper-slide swiper-slide-prev">头条1</div>
+                                    <div class="swiper-slide swiper-slide-active">头条2</div>
+                                    <div class="swiper-slide ">头条3</div>
+                                    <div class="swiper-slide ">头条4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newslist ul-gg">
+                    	<div class="listitems li-gg">
+                    		<div class="listImage li-img"><img src="images/gallery/a.png"></div>
+                            <div class="listContent li-cont">
+                        		<span>推举新闻标题</span>
+                                <b>作者</b><b>时间</b>
+                            </div>
+                    	</div>
+                    </div>
+                </div>
+                <div class="baijia ul-gg">
+                   <div class="baijiaList li-gg">
+                            <div class="baijiaImage li-img"><img src="images/gallery/b.jpg"></div>
+                            <div class="baijiaContent li-cont">
+                                <span>百家新闻标题</span>
+                                <b>作者</b><b>时间</b>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/swiper.min.js"></script>
+    <script >
+    
+    var swiper1 = new Swiper('.tuiju .topic-gallery-container .swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false,
+        speed: 300,
+        loop: true,
+        grabCursor: true
+    });
+    var swiper2 = new Swiper('.tuiju .ui-hotword-content .swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false,
+        speed: 300,
+        loop: true
+    });
+    </script>
+</body>
+
+</html>
